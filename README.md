@@ -2,7 +2,7 @@
 
 Loja completa da cantina do campus: cardápio com adicionais, carrinho, checkout em quatro etapas, entrega por CEP (ViaCEP) e acompanhamento de pedido que avança sozinho.
 
-**Aplicação publicada:** _colar aqui o link (Vercel, Netlify ou GitHub Pages)_
+**Aplicação publicada:** https://jackfrost232.github.io/cantina-campus-delivery/
 **Tema:** C (Cantina do Campus Delivery)
 
 ## Equipe
