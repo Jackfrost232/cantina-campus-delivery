@@ -594,7 +594,8 @@ a {
 
 .linha-carrinho {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto auto;
+  /* quantidade (do tamanho dela) | preço (ocupa a sobra, alinhado à direita) | remover */
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
   gap: 0.5rem 1rem;
   padding: 0.9rem 1rem;
@@ -605,6 +606,10 @@ a {
 
 .linha-carrinho__texto {
   grid-column: 1 / -1;
+}
+
+.linha-carrinho .preco {
+  justify-self: end;
 }
 
 .linha-carrinho__nome {
@@ -957,6 +962,16 @@ a {
 
   .tempo {
     grid-template-columns: 1fr 1fr;
+  }
+
+  /* Em 360 px quantidade, preço e "Remover" não cabem numa linha: "Remover" desce. */
+  .linha-carrinho {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .linha-carrinho .botao--texto {
+    grid-column: 1 / -1;
+    justify-self: start;
   }
 
   .acoes .botao {
