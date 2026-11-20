@@ -1,0 +1,152 @@
+[
+  {
+    "id": "coxinha",
+    "nome": "Coxinha de frango",
+    "categoria": "salgado",
+    "preco": 650,
+    "disponivel": true,
+    "descricao": "Massa crocante recheada com frango desfiado e temperado.",
+    "adicionais": [{ "id": "catupiry", "nome": "Catupiry", "preco": 150 }]
+  },
+  {
+    "id": "pastel-carne",
+    "nome": "Pastel de carne",
+    "categoria": "salgado",
+    "preco": 700,
+    "disponivel": true,
+    "descricao": "Pastel frito na hora, com carne moída e azeitona.",
+    "adicionais": [
+      { "id": "queijo", "nome": "Queijo extra", "preco": 200 },
+      { "id": "vinagrete", "nome": "Vinagrete", "preco": 100 }
+    ]
+  },
+  {
+    "id": "pao-de-queijo",
+    "nome": "Pão de queijo",
+    "categoria": "salgado",
+    "preco": 400,
+    "disponivel": true,
+    "descricao": "Pão de queijo quentinho, macio por dentro.",
+    "adicionais": []
+  },
+  {
+    "id": "esfiha-carne",
+    "nome": "Esfiha de carne",
+    "categoria": "salgado",
+    "preco": 600,
+    "disponivel": true,
+    "descricao": "Esfiha aberta de carne com tomate e cebola.",
+    "adicionais": []
+  },
+  {
+    "id": "empada-frango",
+    "nome": "Empada de frango",
+    "categoria": "salgado",
+    "preco": 550,
+    "disponivel": false,
+    "descricao": "Massa amanteigada com recheio cremoso de frango. Esgotada hoje.",
+    "adicionais": []
+  },
+  {
+    "id": "suco-cupuacu",
+    "nome": "Suco de cupuaçu",
+    "categoria": "bebida",
+    "preco": 700,
+    "disponivel": true,
+    "descricao": "Polpa de cupuaçu batida com água gelada, 400 ml.",
+    "adicionais": []
+  },
+  {
+    "id": "suco-caju",
+    "nome": "Suco de caju",
+    "categoria": "bebida",
+    "preco": 600,
+    "disponivel": true,
+    "descricao": "Suco de caju natural, 400 ml.",
+    "adicionais": []
+  },
+  {
+    "id": "refrigerante-lata",
+    "nome": "Refrigerante lata",
+    "categoria": "bebida",
+    "preco": 500,
+    "disponivel": true,
+    "descricao": "Lata de 350 ml, bem gelada.",
+    "adicionais": []
+  },
+  {
+    "id": "agua-mineral",
+    "nome": "Água mineral",
+    "categoria": "bebida",
+    "preco": 300,
+    "disponivel": true,
+    "descricao": "Garrafa de 500 ml, sem gás.",
+    "adicionais": []
+  },
+  {
+    "id": "cafe-coado",
+    "nome": "Café coado",
+    "categoria": "bebida",
+    "preco": 350,
+    "disponivel": true,
+    "descricao": "Café coado na hora, copo de 200 ml.",
+    "adicionais": []
+  },
+  {
+    "id": "brigadeiro",
+    "nome": "Brigadeiro",
+    "categoria": "doce",
+    "preco": 250,
+    "disponivel": true,
+    "descricao": "Brigadeiro tradicional de chocolate.",
+    "adicionais": []
+  },
+  {
+    "id": "pudim",
+    "nome": "Pudim de leite",
+    "categoria": "doce",
+    "preco": 800,
+    "disponivel": true,
+    "descricao": "Fatia de pudim de leite condensado com calda de caramelo.",
+    "adicionais": []
+  },
+  {
+    "id": "bolo-cenoura",
+    "nome": "Bolo de cenoura",
+    "categoria": "doce",
+    "preco": 600,
+    "disponivel": true,
+    "descricao": "Fatia de bolo de cenoura fofinho.",
+    "adicionais": [{ "id": "cobertura", "nome": "Cobertura de chocolate", "preco": 100 }]
+  },
+  {
+    "id": "marmita-frango",
+    "nome": "Marmita de frango caipira",
+    "categoria": "refeicao",
+    "preco": 1800,
+    "disponivel": true,
+    "descricao": "Arroz, feijão, frango caipira, farofa e salada.",
+    "adicionais": [
+      { "id": "ovo", "nome": "Ovo frito", "preco": 200 },
+      { "id": "farofa", "nome": "Farofa extra", "preco": 150 }
+    ]
+  },
+  {
+    "id": "marmita-carne",
+    "nome": "Marmita de carne de sol",
+    "categoria": "refeicao",
+    "preco": 2200,
+    "disponivel": true,
+    "descricao": "Arroz, feijão tropeiro, carne de sol, mandioca e vinagrete.",
+    "adicionais": [{ "id": "ovo", "nome": "Ovo frito", "preco": 200 }]
+  },
+  {
+    "id": "prato-feito",
+    "nome": "Prato feito do dia",
+    "categoria": "refeicao",
+    "preco": 2000,
+    "disponivel": true,
+    "descricao": "Prato do dia com arroz, feijão, proteína e acompanhamento.",
+    "adicionais": []
+  }
+]
