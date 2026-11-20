@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { enderecoAposBusca, formatarCep, validarCep } from '../dominio/entrega';
+import { enderecoAposBusca, formatarCep, validarCep, validarCidadeEntrega } from '../dominio/entrega';
 import type { BuscaAnterior } from '../dominio/entrega';
 import { formatarCentavos } from '../dominio/formatos';
 import { FRETE_GRATIS_A_PARTIR, PEDIDO_MINIMO_ENTREGA, TAXA_ENTREGA } from '../dominio/precos';
@@ -52,7 +52,10 @@ export function EtapaEntrega({ dados, erros, aoAlterar }: EtapaEntregaProps) {
       );
       buscaAnterior.current = { cep: dados.cep, rua, bairro };
       aoAlterar({ cidade: endereco.cidade, uf: endereco.uf, rua, bairro });
-      setSituacao('encontrado');
+      // C10: avisa já na busca quando o CEP é de fora da área de entrega.
+      const foraDaArea = validarCidadeEntrega(endereco.cidade, endereco.uf);
+      setSituacao(foraDaArea ? 'erro' : 'encontrado');
+      setMensagem(foraDaArea ?? '');
     } catch (erro) {
       if (controle.signal.aborted) {
         return;
