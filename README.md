@@ -90,7 +90,7 @@ Os cenários C01 a C08 e C10 a C12 estão cobertos por testes automáticos. Os d
 | RC09 | No console: `localStorage.setItem('cantina:carrinho', 'isso nao e json')` e recarregar. A aplicação abre com o carrinho vazio |
 | RC07 | No F12, aba Rede, marcar Offline e recarregar: aparece o erro com Tentar de novo |
 
-Em 20/11/2026 todos os cenários foram conferidos também na tela, com o resultado da tabela do enunciado: C03, C05 a C15, a navegação só por teclado (pular para o conteúdo, adicionar item e avançar no checkout com Tab e Enter, com foco visível) e a largura de 360 px.
+Em 20/11/2026 os cenários C01 a C15 foram conferidos também na tela da versão publicada, todos com o resultado da tabela do enunciado, além da navegação só por teclado (pular para o conteúdo, adicionar item e avançar no checkout com Tab e Enter, com foco visível), da largura de 360 px em todas as rotas e de uma verificação automática de acessibilidade (axe-core, WCAG 2.1 AA) sem violações nos temas claro e escuro.
 
 ## Decisões técnicas
 
