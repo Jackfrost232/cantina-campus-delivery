@@ -11,6 +11,7 @@ import { ResumoValores } from '../componentes/ResumoValores';
 import { itensIndisponiveis } from '../dominio/carrinho';
 import {
   DADOS_INICIAIS,
+  limparErrosAlterados,
   montarPedido,
   primeiroCampoInvalido,
   validarEntregaEtapa,
@@ -83,7 +84,7 @@ function FluxoDoCheckout({ itens }: FluxoDoCheckoutProps) {
 
   function alterar(parcial: Partial<DadosCheckout>) {
     setDados((atuais) => ({ ...atuais, ...parcial }));
-    setErros({});
+    setErros((atuais) => limparErrosAlterados(atuais, parcial)); // some só o erro do campo alterado
   }
 
   function validar(numeroEtapa: number): ErrosCheckout {

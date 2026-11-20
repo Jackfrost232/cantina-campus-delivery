@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import {
   DADOS_INICIAIS,
+  limparErrosAlterados,
   montarPedido,
   primeiroCampoInvalido,
   validarEntregaEtapa,
@@ -62,6 +63,29 @@ describe('pagamento e foco', () => {
   it('o foco vai para o primeiro campo inválido, na ordem da tela', () => {
     expect(primeiroCampoInvalido({ bairro: 'x', rua: 'x', cep: 'x' })).toBe('cep');
     expect(primeiroCampoInvalido({})).toBeNull();
+  });
+});
+
+describe('erros enquanto a pessoa digita', () => {
+  const erros = { rua: 'Informe a rua', numero: 'Informe o número', bairro: 'Informe o bairro' };
+
+  it('digitar num campo apaga só o erro dele; os outros continuam', () => {
+    expect(limparErrosAlterados(erros, { rua: 'Rua A' })).toEqual({ numero: 'Informe o número', bairro: 'Informe o bairro' });
+    expect(erros.rua).toBe('Informe a rua'); // não altera o objeto original
+  });
+
+  it('a busca do CEP limpa o erro do CEP, e o troco é limpo ao digitar ou trocar a forma de pagamento', () => {
+    expect(limparErrosAlterados({ cep: 'x', rua: 'y' }, { cidade: 'Balsas', uf: 'MA' })).toEqual({ rua: 'y' });
+    expect(limparErrosAlterados({ troco: 'x' }, { trocoPara: '60' })).toEqual({});
+    expect(limparErrosAlterados({ troco: 'x' }, { pagamento: 'pix' })).toEqual({});
+  });
+
+  it('trocar entre entrega e retirada limpa todos os erros da etapa', () => {
+    expect(limparErrosAlterados({ modo: 'x', cep: 'y', rua: 'z' }, { modo: 'retirada' })).toEqual({});
+  });
+
+  it('o complemento é opcional e não apaga nada', () => {
+    expect(limparErrosAlterados(erros, { complemento: 'Apto 2' })).toEqual(erros);
   });
 });
 

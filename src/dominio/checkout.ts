@@ -43,6 +43,40 @@ export function primeiroCampoInvalido(erros: ErrosCheckout): CampoCheckout | nul
   return ORDEM_CAMPOS.find((campo) => erros[campo] !== undefined) ?? null;
 }
 
+/** Que mensagens de erro cada dado do formulário afeta. Trocar o modo muda a etapa inteira. */
+const ERROS_DE_CADA_DADO: Record<keyof DadosCheckout, CampoCheckout[] | 'todos'> = {
+  nome: ['nome'],
+  telefone: ['telefone'],
+  modo: 'todos',
+  cep: ['cep'],
+  cidade: ['cep'],
+  uf: ['cep'],
+  rua: ['rua'],
+  numero: ['numero'],
+  bairro: ['bairro'],
+  complemento: [],
+  pagamento: ['troco'],
+  trocoPara: ['troco'],
+};
+
+/**
+ * Ao digitar, some só o erro do campo alterado; os outros continuam ao lado dos seus campos
+ * até a pessoa corrigi-los. Não altera o objeto recebido.
+ */
+export function limparErrosAlterados(erros: ErrosCheckout, alterados: Partial<DadosCheckout>): ErrosCheckout {
+  const restantes: ErrosCheckout = { ...erros };
+  for (const dado of Object.keys(alterados) as (keyof DadosCheckout)[]) {
+    const afetados = ERROS_DE_CADA_DADO[dado];
+    if (afetados === 'todos') {
+      return {};
+    }
+    for (const campo of afetados) {
+      delete restantes[campo];
+    }
+  }
+  return restantes;
+}
+
 export function validarIdentificacao(dados: DadosCheckout): ErrosCheckout {
   const erros: ErrosCheckout = {};
   if (dados.nome.trim().length < 3) {
