@@ -9,10 +9,9 @@ Loja completa da cantina do campus: cardápio com adicionais, carrinho, checkout
 
 | Integrante | Responsável por |
 | --- | --- |
-| _Nome 1_ | _ex.: regras de negócio e testes (`src/dominio`, `src/testes`)_ |
-| _Nome 2_ | _ex.: cardápio, detalhe do item e carrinho_ |
-| _Nome 3_ | _ex.: checkout em etapas e ViaCEP_ |
-| _Nome 4_ | _ex.: pedidos, acompanhamento, estilos e publicação_ |
+| Pedro Paulo Teixeira de Araujo | Todas as partes: tipos, regras de negócio e testes (`src/dominio`, `src/testes`), serviços e ViaCEP, contextos, telas, checkout, estilos e publicação |
+
+Projeto feito individualmente, com autorização do professor.
 
 ## Como rodar
 
