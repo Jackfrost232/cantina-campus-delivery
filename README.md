@@ -18,7 +18,7 @@ Projeto feito individualmente, com autorização do professor.
 ```bash
 npm install
 npm run dev      # servidor de desenvolvimento
-npm test         # 66 testes das regras de negócio (Vitest)
+npm test         # 70 testes das regras de negócio (Vitest)
 npm run build    # verifica tipos e gera a versão de produção em dist/
 npm run lint
 ```
