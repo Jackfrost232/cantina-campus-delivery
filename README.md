@@ -35,7 +35,31 @@ npm run lint
 | `/pedidos` | Histórico, com Pedir de novo |
 | qualquer outra | Página de não encontrado com link para o início |
 
-_Acrescentar uma captura de tela de cada rota antes da entrega._
+### Capturas de tela
+
+**`/` Cardápio**
+
+![Cardápio com filtros, busca, ordenação e item esgotado desativado](docs/capturas/cardapio.png)
+
+**`/itens/:id` Detalhe do item** (coxinha com catupiry, 2 unidades: R$ 16,00)
+
+![Detalhe do item com adicional marcado, observação e preço da linha](docs/capturas/detalhe-item.png)
+
+**`/carrinho` Carrinho**
+
+![Carrinho com três linhas, controles de quantidade e resumo de valores](docs/capturas/carrinho.png)
+
+**`/checkout` Checkout, etapa Entrega** (CEP 65800-000 com Balsas-MA preenchido e rua e bairro digitados)
+
+![Checkout na etapa de entrega com o CEP de Balsas](docs/capturas/checkout.png)
+
+**`/pedidos/:numero` Acompanhamento** (pedido em preparo, total do cenário C03: R$ 28,75)
+
+![Acompanhamento do pedido com linha do tempo e resumo](docs/capturas/acompanhamento.png)
+
+**`/pedidos` Meus pedidos**
+
+![Histórico de pedidos com situação, total e Pedir de novo](docs/capturas/meus-pedidos.png)
 
 ## Regras de negócio
 
@@ -65,6 +89,8 @@ Os cenários C01 a C08 e C10 a C12 estão cobertos por testes automáticos. Os d
 | C15 | Fazer um pedido com um item e depois marcar esse item como `"disponivel": false` em `public/dados/cardapio.json`. Em Meus pedidos, "Pedir de novo" repõe os demais e cita o que ficou de fora |
 | RC09 | No console: `localStorage.setItem('cantina:carrinho', 'isso nao e json')` e recarregar. A aplicação abre com o carrinho vazio |
 | RC07 | No F12, aba Rede, marcar Offline e recarregar: aparece o erro com Tentar de novo |
+
+Em 20/11/2026 todos os cenários foram conferidos também na tela, com o resultado da tabela do enunciado: C03, C05 a C15, a navegação só por teclado (pular para o conteúdo, adicionar item e avançar no checkout com Tab e Enter, com foco visível) e a largura de 360 px.
 
 ## Decisões técnicas
 
