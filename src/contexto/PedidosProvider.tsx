@@ -13,7 +13,11 @@ function lerPedidos(): Pedido[] {
   return lerArmazenado<Pedido[]>(CHAVE, ehListaDePedidos, []);
 }
 
-export function PedidosProvider({ children }: { children: ReactNode }) {
+interface PedidosProviderProps {
+  children: ReactNode;
+}
+
+export function PedidosProvider({ children }: PedidosProviderProps) {
   const [pedidos, setPedidos] = useState<Pedido[]>(lerPedidos);
 
   useEffect(() => {

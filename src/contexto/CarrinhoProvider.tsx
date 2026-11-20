@@ -13,7 +13,11 @@ function lerCarrinho(): LinhaCarrinho[] {
   return lerArmazenado<LinhaCarrinho[]>(CHAVE, ehListaDeLinhas, []);
 }
 
-export function CarrinhoProvider({ children }: { children: ReactNode }) {
+interface CarrinhoProviderProps {
+  children: ReactNode;
+}
+
+export function CarrinhoProvider({ children }: CarrinhoProviderProps) {
   const [linhas, despachar] = useReducer(carrinhoReducer, undefined, lerCarrinho);
 
   useEffect(() => {

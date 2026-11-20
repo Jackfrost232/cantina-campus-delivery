@@ -21,7 +21,11 @@ export function CarrinhoPagina() {
   );
 }
 
-function ConteudoDoCarrinho({ itens }: { itens: ItemCardapio[] }) {
+interface ConteudoDoCarrinhoProps {
+  itens: ItemCardapio[];
+}
+
+function ConteudoDoCarrinho({ itens }: ConteudoDoCarrinhoProps) {
   const { linhas, alterarQuantidade, remover, limpar } = useCarrinho();
 
   if (linhas.length === 0) {

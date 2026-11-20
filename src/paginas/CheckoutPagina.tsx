@@ -38,7 +38,11 @@ export function CheckoutPagina() {
   );
 }
 
-function FluxoDoCheckout({ itens }: { itens: ItemCardapio[] }) {
+interface FluxoDoCheckoutProps {
+  itens: ItemCardapio[];
+}
+
+function FluxoDoCheckout({ itens }: FluxoDoCheckoutProps) {
   const navegar = useNavigate();
   const { linhas, limpar } = useCarrinho();
   const { registrarPedido, maiorNumero } = usePedidos();

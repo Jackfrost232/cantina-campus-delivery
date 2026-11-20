@@ -4,7 +4,11 @@ import { buscarCardapio } from '../servicos/cardapio';
 import { CardapioContexto } from './cardapioContexto';
 import type { CardapioValor, EstadoCardapio } from './cardapioContexto';
 
-export function CardapioProvider({ children }: { children: ReactNode }) {
+interface CardapioProviderProps {
+  children: ReactNode;
+}
+
+export function CardapioProvider({ children }: CardapioProviderProps) {
   const [estado, setEstado] = useState<EstadoCardapio>({ situacao: 'carregando' });
   const [tentativa, setTentativa] = useState(0);
 

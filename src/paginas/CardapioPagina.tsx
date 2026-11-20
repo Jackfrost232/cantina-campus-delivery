@@ -23,7 +23,11 @@ export function CardapioPagina() {
   );
 }
 
-function ListaDoCardapio({ itens }: { itens: ItemCardapio[] }) {
+interface ListaDoCardapioProps {
+  itens: ItemCardapio[];
+}
+
+function ListaDoCardapio({ itens }: ListaDoCardapioProps) {
   const { adicionar } = useCarrinho();
   const [filtros, setFiltros] = useState<Filtros>({ busca: '', categoria: '', ordem: 'nome' });
   const [aviso, setAviso] = useState('');

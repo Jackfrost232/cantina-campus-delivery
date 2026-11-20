@@ -30,7 +30,12 @@ export function DetalheItemPagina() {
   );
 }
 
-function FormularioDoItem({ item, itens }: { item: ItemCardapio; itens: ItemCardapio[] }) {
+interface FormularioDoItemProps {
+  item: ItemCardapio;
+  itens: ItemCardapio[];
+}
+
+function FormularioDoItem({ item, itens }: FormularioDoItemProps) {
   useTitulo(item.nome);
   const { adicionar } = useCarrinho();
   const [selecionados, setSelecionados] = useState<string[]>([]);
